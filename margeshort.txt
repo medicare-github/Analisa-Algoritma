@@ -8,6 +8,7 @@ public class MargeSort {
         ArrayList<Integer> daftar = new ArrayList<>();
         try {
             String line;
+            //ganti "E:// .... sesuai dengan pwd dan nama file kalian dibawah"
             Tester = new BufferedReader(new FileReader("E://TUGAS PAK ASRIL//Tugas4//random.csv"));
             while ((line = Tester.readLine()) != null) {
                 daftar.add(Integer.parseInt(line));

@@ -11,6 +11,7 @@ public class Max {
         ArrayList<Integer> list = new ArrayList<>();
         try {
             String Tes;
+            //ganti "E:// .... sesuai dengan pwd dan nama file kalian" di bawah
             coba = new BufferedReader(new FileReader("E://TUGAS PAK ASRIL//Max//random.csv"));
             while ((Tes = coba.readLine()) != null) {
                 list.add(Integer.parseInt(Tes));
