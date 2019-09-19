@@ -1,0 +1,21 @@
+
+package text12;
+public class Text12 {
+
+    public static void main(String[] args) {                
+        String kalimat[] = new String[3];        
+        kalimat[0]="pergi ke pasar dengan ibu";
+        kalimat[1]="pergi ke mall dengan bapak";
+        kalimat[2]="pergi ke perpustakaan sendirian";                             
+        for (int i = 0; i < kalimat.length; i++) {
+            System.out.println("Kalimat "+(i+1)+" :"+kalimat[i]);
+        }                
+        String patt = "ibu";                
+        System.out.println("Kata Yang Di cari : "+patt);
+        System.out.println("----------------------------------------------------");
+        
+        for (int i = 0; i < kalimat.length; i++) {
+            System.out.println("Cari kata kalimat ke"+(i+1)+" :  "+kalimat[i].matches("(.*)"+patt+"(.*)"));     
+        }             
+    }
+}

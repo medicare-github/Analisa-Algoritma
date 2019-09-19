@@ -1,0 +1,91 @@
+package max;
+import java.io.*;
+import java.util.*;
+public class Max {
+
+    public static void main(String[] args) {
+        
+        int maximum1[] = new int[4];
+        int minimum[]= new int[4];
+        BufferedReader coba = null;
+        ArrayList<Integer> list = new ArrayList<>();
+        try {
+            String Tes;
+            coba = new BufferedReader(new FileReader("E://TUGAS PAK ASRIL//Max//random.csv"));
+            while ((Tes = coba.readLine()) != null) {
+                list.add(Integer.parseInt(Tes));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("Data");
+        System.out.println(list);
+        int data[] = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            data[i] = list.get(i);
+        }
+            maximum1[0] = data[0];
+            minimum[0]= data[0];
+            for (int i = 1; i < (data.length / 4); i++) {
+                if (data[i] > maximum1[0]) {
+                    maximum1[0] = data[i];
+                }
+                if (data[i] < minimum[0]) {
+                    minimum[0] = data[i];
+                }
+            }
+             maximum1[1] = (data.length / 4);
+             minimum[1] = (data.length / 4);
+            for (int i = (data.length / 4) + 1; i < (2 * data.length / 4); i++) {
+                if (data[i] > maximum1[1]) {
+                    maximum1[1] = data[i];
+                }
+                if (data[i] < minimum[1]) {
+                    minimum[1] = data[i];
+                }
+            }
+             maximum1[2] = (2 * data.length / 4);
+             minimum[2] = (2 * data.length / 4);
+            for (int i = (2 * data.length / 4) + 1; i < (3 * data.length / 4); i++) {
+                if (data[i] > maximum1[2]) {
+                    maximum1[2] = data[i];
+                }
+                if (data[i] < minimum[2]) {
+                    minimum[2] = data[i];
+                }
+            }
+
+            maximum1[3]= (3 * data.length / 4);
+            minimum[3] = (3 * data.length / 4);
+            for (int i = (3 * data.length / 4) + 1; i < (4 * data.length / 4); i++) {
+                if (data[i] > maximum1[3]) {
+                    maximum1[3] = data[i];
+                }
+                if (data[i] < minimum[3]) {
+                    minimum[3] = data[i];
+                }
+            }             
+        
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Max"+i+" = "+maximum1[i]);
+            System.out.println("Min"+i+" = "+minimum[i]);           
+            
+        }
+        
+        int max,min;
+        max = maximum1[0];
+        min = minimum[0];
+        for (int i = 1; i < 4; i++) {
+            if (maximum1[i]>max) {
+                max = maximum1[i];
+            }
+            if (minimum[i] < min) {
+                min = minimum[i];
+            }
+        }
+        System.out.println("==================FINAL==================");
+        System.out.println("MAXIMUM : "+max);
+        System.out.println("MINIMUM : "+min);
+    }
+    
+}
